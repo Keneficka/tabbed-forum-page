@@ -1,0 +1,143 @@
+//Unsolved Request
+
+[
+    {
+        "messages": {
+            "fields": [
+                "author.avatar.message",
+                "author.login",
+                "author.view_href",
+                "author.rank.name",
+                "author.rank.icon_right",
+                "author.rank.color",
+                "subject",
+                "post_time",
+                "post_time_friendly",
+                "view_href",
+                "replies.count(*)",
+                "metrics.views",
+                "user_context.read",
+                "replies"
+            ],
+            "constraints": [
+                {
+                    "board.id": "aktestboard",
+                    "depth":0,
+                    "conversation.solved": false
+                }
+            ],
+            "limit":10,
+            "subQueries": {
+                "replies": {
+                    "fields": [
+                        "author.login",
+                        "author.view_href",
+                        "author.rank.name",
+                        "author.rank.icon_right",
+                        "author.rank.color",
+                        "post_time"
+                    ],
+                    "limit": 1
+                }
+            }
+        }
+    }
+]
+
+//Unsolved Response
+{
+    "status": "success",
+    "message": "",
+    "http_code": 200,
+    "data": {
+        "type": "messages",
+        "list_item_type": "message",
+        "size": 2,
+        "items": [
+            {
+                "type": "message",
+                "view_href": "https://community.stage.ptc.com/t5/AK-Test-Board/Testing-New-Labels-Two/td-p/1974",
+                "author": {
+                    "type": "user",
+                    "view_href": "https://community.stage.ptc.com/t5/user/viewprofilepage/user-id/250",
+                    "login": "AndrewK",
+                    "rank": {
+                        "type": "rank",
+                        "name": "Community Manager",
+                        "color": "0000CC",
+                        "icon_right": "/html/rank_icons/J12933_PTCbadge-01.png"
+                    },
+                    "avatar": {
+                        "type": "avatar",
+                        "message": "https://community.stage.ptc.com/t5/image/serverpage/avatar-name/roboplanet/avatar-theme/chrome/avatar-collection/robots/avatar-display-size/message/version/2?xdesc=1.0"
+                    }
+                },
+                "subject": "Testing New Labels Two",
+                "post_time": "2023-03-21T07:38:18.869-07:00",
+                "post_time_friendly": "03-21-2023",
+                "metrics": {
+                    "type": "message_metrics",
+                    "views": 2
+                },
+                "replies": {
+                    "type": "messages",
+                    "list_item_type": "message",
+                    "size": 1,
+                    "items": [
+                        {
+                            "type": "message",
+                            "author": {
+                                "type": "user",
+                                "view_href": "https://community.stage.ptc.com/t5/user/viewprofilepage/user-id/250",
+                                "login": "AndrewK",
+                                "rank": {
+                                    "type": "rank",
+                                    "name": "Community Manager",
+                                    "color": "0000CC",
+                                    "icon_right": "/html/rank_icons/J12933_PTCbadge-01.png"
+                                }
+                            },
+                            "post_time": "2023-03-22T10:49:30.281-07:00"
+                        }
+                    ],
+                    "count": 1
+                }
+            },
+            {
+                "type": "message",
+                "view_href": "https://community.stage.ptc.com/t5/AK-Test-Board/Testing-New-Labels/td-p/1973",
+                "author": {
+                    "type": "user",
+                    "view_href": "https://community.stage.ptc.com/t5/user/viewprofilepage/user-id/250",
+                    "login": "AndrewK",
+                    "rank": {
+                        "type": "rank",
+                        "name": "Community Manager",
+                        "color": "0000CC",
+                        "icon_right": "/html/rank_icons/J12933_PTCbadge-01.png"
+                    },
+                    "avatar": {
+                        "type": "avatar",
+                        "message": "https://community.stage.ptc.com/t5/image/serverpage/avatar-name/roboplanet/avatar-theme/chrome/avatar-collection/robots/avatar-display-size/message/version/2?xdesc=1.0"
+                    }
+                },
+                "subject": "Testing New Labels",
+                "post_time": "2023-03-21T07:35:22.304-07:00",
+                "post_time_friendly": "03-21-2023",
+                "metrics": {
+                    "type": "message_metrics",
+                    "views": 1
+                },
+                "replies": {
+                    "type": "messages",
+                    "list_item_type": "message",
+                    "size": 0,
+                    "items": [],
+                    "count": 0
+                }
+            }
+        ],
+        "next_cursor": "MjMuMnwyLjB8aXwyfDQxOjAsMTU6MHxpbnQsMTk3NCwxOTcz"
+    },
+    "metadata": {}
+}

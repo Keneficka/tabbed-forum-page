@@ -1,0 +1,34 @@
+Info Needed
+Author
+-Avatar Image
+-Login Name
+-Profile Href
+-Rank
+-Rank Icon
+-Rank color
+
+Post
+-Subject
+-Post Date & Time
+-href
+-replies count
+-views count
+
+Latest Reply
+-Login Name
+-Profile Href
+-Rank
+-Rank Icon
+-Rank color
+-Post Date & Time
+
+
+To Do 
+-fix hover text
+-add !''
+-pagination 
+-get number per page from settings layout.messages_per_page_linear 30
+-rank bold?
+-get board id
+
+<component id="custom.thread-info-column-script"/>
