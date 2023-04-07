@@ -24,11 +24,16 @@ Latest Reply
 
 
 To Do 
--fix hover text
--add !''
--pagination 
--get number per page from settings layout.messages_per_page_linear 30
--rank bold?
--get board id
+✔ fix hover text
+✔ add !''
+✔ pagination 
+✔ get number per page from settings layout.messages_per_page_linear 30
+✔ rank bold?
+✔ get board id
+✔ fix URL for advanced tab
+✔ message for no results found
+✔ add solved marker?
 
 <component id="custom.thread-info-column-script"/>
+
+
