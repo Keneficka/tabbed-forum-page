@@ -33,7 +33,13 @@ To Do
 ✔ fix URL for advanced tab
 ✔ message for no results found
 ✔ add solved marker?
+✔ redefine "unsolved" at least one reply
+- google tracking for tabs
+✔ add roles
+    -solved for everyone
+    -rank 12 and up gets everything but advanced
+    -champions and admin for advanced
 
 <component id="custom.thread-info-column-script"/>
 
-
+rank role name -> Rank Tab Access
