@@ -2,10 +2,10 @@
 <#assign admin = "false">
 <#assign rankTabs = "false">
 <#list userRoles as role>
-    <#if (role.name == "Champion" || role.name == "Administrator")>
+    <#if (role.name == "Champion" || role.name == "Administrator" || role.name == "Moderator")>
         <#assign admin = "true" />
     </#if>
-    <#if (role.name == "Rank Tab Access")>
+    <#if (role.name == "Rank Tab Access" || role.name == "Employee")>
         <#assign rankTabs = "true" />
     </#if>
 </#list>
