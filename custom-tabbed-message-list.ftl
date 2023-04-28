@@ -1,9 +1,9 @@
 <#assign userRoles = (restBuilder().admin(true).liql("SELECT name FROM roles WHERE users.id = '${user.id?c}' LIMIT 100").data.items)![]/>
-<#assign admin = "false">
+<#assign advancedAccess = "false">
 <#assign rankTabs = "false">
 <#list userRoles as role>
     <#if (role.name == "Champion" || role.name == "Administrator" || role.name == "Moderator")>
-        <#assign admin = "true" />
+        <#assign advancedAccess = "true" />
     </#if>
     <#if (role.name == "Rank Tab Access" || role.name == "Employee")>
         <#assign rankTabs = "true" />
@@ -39,7 +39,7 @@ default tab = all
             <span><a class="lia-link-navigation tab-link" href="${coreNode.webUi.url}?tab=solved" id="solved-link-ak">Solved</a></span>
         </li>
 
-        <#if admin == "true" || rankTabs = "true" >
+        <#if advancedAccess == "true" || rankTabs = "true" >
             <#if activeTab == "unsolved">
                 <li class="lia-tabs lia-tabs-active">
             <#else>
@@ -56,7 +56,7 @@ default tab = all
             </li>
         </#if>
 
-        <#if admin == "true" >
+        <#if advancedAccess == "true" >
             <#if activeTab == "advanced">
                 <li class="lia-tabs lia-tabs-active" id="adv-tab-ak">
             <#else>
@@ -1361,20 +1361,26 @@ default tab = all
             gtag('event', 'solved_tab_click');
         });
 
-        document.getElementById("unsolved-link-ak").addEventListener("click", function (){
-            console.log('unsolved_tab_click')
-            gtag('event', 'unsolved_tab_click');
-        });
+        if(document.getElementById("unsolved-link-ak")) {
+            document.getElementById("unsolved-link-ak").addEventListener("click", function (){
+                console.log('unsolved_tab_click')
+                gtag('event', 'unsolved_tab_click');
+            });
+        }
 
-        document.getElementById("unanswered-link-ak").addEventListener("click", function (){
-            console.log('unanswered_tab_click')
-            gtag('event', 'unanswered_tab_click');
-        });
+        if(document.getElementById("unanswered-link-ak")) {
+            document.getElementById("unanswered-link-ak").addEventListener("click", function (){
+                console.log('unanswered_tab_click')
+                gtag('event', 'unanswered_tab_click');
+            });
+        }
 
-        document.getElementById("advanced-link-ak").addEventListener("click", function (){
-            console.log('advanced_tab_click')
-            gtag('event', 'advanced_tab_click');
-        });
+        if(document.getElementById("advanced-link-ak")) {
+            document.getElementById("advanced-link-ak").addEventListener("click", function (){
+                console.log('advanced_tab_click')
+                gtag('event', 'advanced_tab_click');
+            });
+        }
 
         
     })(LITHIUM.jQuery);
