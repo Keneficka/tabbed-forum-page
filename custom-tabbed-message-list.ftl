@@ -86,6 +86,11 @@ default tab = all
 </#if>
 <#--END ALL TOPICS TAB-->
 
+<#--SET TIME ZONE FOR USER-->
+<#if !user.anonymous>
+    <#assign timeZone = (rest("/users/self/settings/name/config.timezone").value)!'US/Eastern' />
+    <#setting time_zone=timeZone>
+</#if>
 
 <#--SOLVED TAB-->
 <#if activeTab == "solved">
@@ -134,6 +139,9 @@ default tab = all
                                     "depth":0,
                                     "conversation.solved": true
                                 }
+                            ],
+                            "sorts": [
+                                "conversation.last_post_time desc"
                             ],
                             "limit":results_list_size,
                             "offset":offSet,
@@ -407,6 +415,9 @@ default tab = all
                                         ">":0
                                     }
                                 }
+                            ],
+                            "sorts": [
+                                "conversation.last_post_time desc"
                             ],
                             "limit":results_list_size,
                             "offset":offSet,
@@ -1056,6 +1067,9 @@ default tab = all
                                 "conversation.solved"
                             ],
                             "constraints":constraints,
+                            "sorts": [
+                                "conversation.last_post_time desc"
+                            ],
                             "limit":results_list_size,
                             "offset":offSet,
                             "subQueries": {
