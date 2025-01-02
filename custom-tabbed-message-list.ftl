@@ -869,6 +869,7 @@ default tab = all
             padding: 0 5px;
             border-radius: 5px;
             font-weight: 400;
+            width: 100%;
         }
 
         #advanced-label-ul {
@@ -1031,7 +1032,7 @@ default tab = all
                         <#else>
                             <input type="checkbox" value="${label.text}" id="${label.text}" class="AKLabelCheckBox">
                         </#if>
-                        <label class="label-chkbox-label" for="${label.text}">${label.text}</label>
+                        <label class="label-chkbox-label" for="${label.text}" title="${label.text}">${label.text}</label>
                     </li>
                 </#list>
             </ul>
